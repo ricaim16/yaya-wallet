@@ -75,7 +75,7 @@ app.post("/generate-signature", (req, res) => {
   }
 });
 
-// Webhook endpoint
+// endpoint
 app.post("/webhook", (req, res) => {
   try {
     // Log source IP for debugging
