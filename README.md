@@ -51,6 +51,7 @@ The solution is implemented in **Node.js with Express** and demonstrates how to:
 
 ### 1. Clone the Repository
 ```bash
+
 git clone <your-repo-url>
 cd yaya-wallet
 
@@ -59,14 +60,23 @@ cd yaya-wallet
 Install Dependencies
 npm install
 
+
 3. Configure Environment Variables
 
 Create a .env file in the project root:
 
-SECRET_KEY=test_key   # Replace with your YaYa Wallet secret key
-PORT=5000             # Server port
+
+SECRET_KEY=test_key
+# Replace with your YaYa Wallet secret key
+
+
+PORT=5000
+ # Server port
+
+
 
 4. Start the Server
+
 npm start
 
 
@@ -74,7 +84,10 @@ Server will run at:
 
 http://localhost:5000
 
+
+
 🧪 Testing the Implementation
+
 1. Generate a Signature (Local Testing)
 
 Use the /generate-signature endpoint to generate a valid signature:
@@ -97,6 +110,7 @@ curl -X POST http://localhost:5000/generate-signature \
 Response:
 
 { "signature": "<calculated_signature>" }
+
 
 2. Send a Webhook Event
 
@@ -122,6 +136,8 @@ Response:
 
 Webhook received successfully
 
+
+
 🛑 Example Error Cases
 Invalid Signature
 curl -X POST http://localhost:5000/webhook \
@@ -136,13 +152,10 @@ Invalid signature
 
 Replay Attack (Expired Timestamp)
 
+
+
 If the payload timestamp is older than 5 minutes:
 
 Request too old (replay attack prevention)
 
-Unauthorized IP
 
-If the request comes from an unlisted IP:
-
-
-Unauthorized IP address
